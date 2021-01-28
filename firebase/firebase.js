@@ -13,7 +13,7 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-/* database.ref().set({
+database.ref().set({
   name: 'Tatenda Kumbula',
   age: 19,
   isSingle: false,
@@ -25,7 +25,7 @@ const database = firebase.database();
   console.log('Data is saved!');
 }).catch((e) => {
   console.log('This failed.', e);
-}); */
+});
 
 
 // database.ref().set('This is my data.');
@@ -43,3 +43,11 @@ database.ref('location/city').set('Alberton'); */
   });
   
  */
+
+ // database.ref()
+//   .remove()
+//   .then(() => {
+//     console.log('Data was removed');
+//   }).catch((e) => {
+//     console.log('Did not remove data', e);
+//   });
