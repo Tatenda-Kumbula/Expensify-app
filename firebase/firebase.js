@@ -13,7 +13,29 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref().set({
+database.ref('expenses').push({
+    description: 'Rent',
+    note: '',
+    amount: 109500,
+    createdAt: 976123498763
+  });
+  
+  database.ref('expenses').push({
+    description: 'Phone bill',
+    note: '',
+    amount: 5900,
+    createdAt: 976123498763
+  });
+  
+  database.ref('expenses').push({
+    description: 'Food',
+    note: '',
+    amount: 1200,
+    createdAt: 976123498763
+  });
+  
+
+/* database.ref().set({
   name: 'Tatenda Kumbula',
   age: 19,
   stressLevel: 6,
@@ -36,7 +58,7 @@ database.ref().update({
     'job/company': 'Amd',
     'location/city': 'Johannesburg'
   });
-
+ */
 
 // database.ref().set('This is my data.');
 /* 
