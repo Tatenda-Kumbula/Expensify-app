@@ -16,16 +16,26 @@ const database = firebase.database();
 database.ref().set({
   name: 'Tatenda Kumbula',
   age: 19,
-  isSingle: false,
+  stressLevel: 6,
+  job: {
+    title: 'Software developer',
+    company: 'Google'
+  },
   location: {
-    city: 'Alberton',
+    city: 'Johannesburg',
     country: 'South Africa'
-}
+  }
 }).then(() => {
   console.log('Data is saved!');
 }).catch((e) => {
   console.log('This failed.', e);
 });
+
+database.ref().update({
+    stressLevel: 9,
+    'job/company': 'Amd',
+    'location/city': 'Johannesburg'
+  });
 
 
 // database.ref().set('This is my data.');
