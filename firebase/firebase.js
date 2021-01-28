@@ -13,7 +13,7 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref().set({
+/* database.ref().set({
   name: 'Tatenda Kumbula',
   age: 19,
   isSingle: false,
@@ -25,7 +25,7 @@ database.ref().set({
   console.log('Data is saved!');
 }).catch((e) => {
   console.log('This failed.', e);
-});
+}); */
 
 
 // database.ref().set('This is my data.');
@@ -33,7 +33,7 @@ database.ref().set({
 database.ref('age').set(19);
 database.ref('location/city').set('Alberton'); */
 
-database.ref('attributes').set({
+/* database.ref('attributes').set({
   height: 73,
   weight: 55
 }).then(() => {
@@ -42,3 +42,4 @@ database.ref('attributes').set({
     console.log('Things didnt for the second error', e);
   });
   
+ */
