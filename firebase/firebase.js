@@ -20,8 +20,13 @@ database.ref().set({
   location: {
     city: 'Alberton',
     country: 'South Africa'
-  }
+}
+}).then(() => {
+  console.log('Data is saved!');
+}).catch((e) => {
+  console.log('This failed.', e);
 });
+
 
 // database.ref().set('This is my data.');
 
