@@ -29,13 +29,16 @@ database.ref().set({
 
 
 // database.ref().set('This is my data.');
-
+/* 
 database.ref('age').set(19);
-database.ref('location/city').set('Alberton');
+database.ref('location/city').set('Alberton'); */
 
 database.ref('attributes').set({
   height: 73,
   weight: 55
-});
-
-console.log('I made a request to change the data.');
+}).then(() => {
+    console.log('Second set call worked.');
+  }).catch((e) => {
+    console.log('Things didnt for the second error', e);
+  });
+  
