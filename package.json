@@ -13,12 +13,13 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
+    "chalk": "^4.1.0",
     "css-loader": "^0.28.4",
-    "enzyme": "^2.9.1",
-    "enzyme-adapter-react-16": "^1.0.0",
-    "enzyme-to-json": "^3.1.4",
-    "jest": "^20.0.4",
-    "live-server": "^1.2.1",
+  
+    "express": "^4.15.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+   
+   
     "moment": "^2.18.1",
     "normalize.css": "^7.0.0",
     "raf": "^3.3.2",
@@ -30,19 +31,19 @@
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.2.2",
     "react-scripts": "4.0.1",
-    "react-test-renderer": "^16.0.0",
+    
     "redux": "^3.7.2",
     "style-loader": "^0.18.2",
     "validator": "^8.0.0",
-    "web-vitals": "^0.2.4",
-    "webpack-dev-server": "^2.5.1"
+    "web-vitals": "^0.2.4"
+    
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "webpack",
-    "test": "react-scripts test",
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "eject": "react-scripts eject",
-    "serve": "live-server public/",
     "dev-server": "webpack-dev-server"
   },
   "eslintConfig": {
@@ -67,9 +68,18 @@
   "main": "index.js",
   "devDependencies": {
     "babel": "^6.23.0",
-    "webpack-cli": "^4.2.0"
+    "webpack-cli": "^4.2.0",
+    "enzyme": "^2.9.1",
+    "enzyme-adapter-react-16": "^1.0.0",
+    "enzyme-to-json": "^3.1.4",
+    "jest": "^20.0.4",
+    "live-server": "^1.2.1",
+    "react-test-renderer": "^16.0.0",
+    "webpack-dev-server": "^2.5.1"
   },
   "author": "tatenda",
   "license": "ISC",
-  "test": "jest --config=jest.config.json"
-}
+  "test": "jest --config=jest.config.json",
+  "start": "node server/server.js",
+  "heroku-postbuild": "yarn run build:prod"
+ 
